@@ -1,6 +1,10 @@
 <h1><%= @song.name %></h1>
-<h3><%= link_to @song.artist.name, artist_path(@song.artist) %></h3>
 
+<ol>
+  <% Artist.all.each do |artist| %>
+  <li><%= link_to artist.name, artist_path(artist) %></li>
+  <% end %>
+</ol>
 
 <ol>
   <% Genre.all.each do |genre| %>
